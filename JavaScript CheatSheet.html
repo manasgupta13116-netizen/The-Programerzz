@@ -1,0 +1,345 @@
+
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>JavaScript Cheatsheet - CodeWithHarry</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+  <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v87/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+  <script data-ad-client="ca-pub-9655830461045889" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-60726752-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-60726752-3');
+  </script>
+<link rel="stylesheet" href="styles.bc31d58d1fffbdf64e6b.css"><style ng-transition="serverApp">.content[_ngcontent-sc76]{min-height:calc(100vh - 56px - 80px)}</style><style ng-transition="serverApp">[_nghost-sc73]{position:relative;display:block;pointer-events:none}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{transition:350ms linear;display:block;position:absolute;top:5px;left:0}[_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]   .ngx-spinner-icon[_ngcontent-sc73]{width:14px;height:14px;border:2px solid transparent;border-top-color:inherit;border-left-color:inherit;border-radius:50%;-webkit-animation:.4s linear infinite loading-bar-spinner;animation:.4s linear infinite loading-bar-spinner}[_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{transition:width 350ms;position:absolute;top:0;left:0;width:100%;height:2px;border-bottom-right-radius:1px;border-top-right-radius:1px}[dir=rtl]   [_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{right:0;left:unset}[fixed=true][_nghost-sc73]{z-index:10002}[fixed=true][_nghost-sc73]   .ngx-bar[_ngcontent-sc73]{position:fixed}[fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{position:fixed;top:10px;left:10px}[dir=rtl]   [fixed=true][_nghost-sc73]   .ngx-spinner[_ngcontent-sc73]{right:10px;left:unset}@-webkit-keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}</style><style ng-transition="serverApp">.brandLogo[_ngcontent-sc74]{max-width:39px;margin:0 13px}li[_ngcontent-sc74]   a.nav-link[_ngcontent-sc74]{color:#fff}.notificationImg[_ngcontent-sc74]{width:30px;filter:invert(1)}.notification-bell[_ngcontent-sc74]{position:absolute;right:0}.dropdown-toggle[_ngcontent-sc74]{font-weight:700}.dropdown-menu-notify[_ngcontent-sc74]{overflow-y:scroll;overflow-x:hidden;max-height:400px;top:60px;right:-1px;left:unset;width:460px;box-shadow:0 5px 7px -1px #c1c1c1;padding:0}ul[_ngcontent-sc74]   ul[_ngcontent-sc74]   a[_ngcontent-sc74]{background:transparent}.dropdown-menu-notify[_ngcontent-sc74]:before{content:"";position:absolute;top:-20px;right:12px;border:10px solid transparent;border-bottom-color:#fff}.head-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:3px 3px 0 0}.footer-notify[_ngcontent-sc74]{padding:5px 15px;border-radius:0 0 3px 3px}.notification-box-notify[_ngcontent-sc74]{padding:10px 0}.bg-gray-notify[_ngcontent-sc74]{background-color:#eee}@media (max-width:640px){.dropdown-menu-notify[_ngcontent-sc74]{top:50px;left:-16px;width:290px}.nav-notify[_ngcontent-sc74]{display:block}.nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74], .nav-notify[_ngcontent-sc74]   .nav-item-notify[_ngcontent-sc74]   a[_ngcontent-sc74]{padding-left:0}.message-notify[_ngcontent-sc74]{font-size:13px}}.loginError[_ngcontent-sc74]{color:red;padding:3px 2px}div.alert[_ngcontent-sc74]{margin:0}input.ng-touched.ng-invalid[_ngcontent-sc74], textarea.ng-touched.ng-invalid[_ngcontent-sc74]{border-color:red}.forgot[_ngcontent-sc74]{font-size:14px;color:#000;text-align:left;text-decoration:underline;cursor:pointer;padding:16px 0}.googleAuth[_ngcontent-sc74]{width:46%;cursor:pointer;border:1px solid #000;border-radius:3px;background:#60a3dd;margin-top:1px}.or[_ngcontent-sc74]{font-weight:500;font-size:19px}.modal-header[_ngcontent-sc74]{display:flex;align-items:center;justify-content:center;flex-direction:column}.modal-header[_ngcontent-sc74]   span[_ngcontent-sc74]{position:absolute;top:15px;right:20px}.navbar-brand[_ngcontent-sc74]{margin:0;padding:0}</style><style ng-transition="serverApp">footer[_ngcontent-sc75]{color:#fff}</style><style ng-transition="serverApp">div.code-toolbar{position:relative}div.code-toolbar>.toolbar{position:absolute;top:.3em;right:.2em;transition:opacity .3s ease-in-out;opacity:0}div.code-toolbar:focus-within>.toolbar,div.code-toolbar:hover>.toolbar{opacity:1}div.code-toolbar>.toolbar .toolbar-item{display:inline-block}div.code-toolbar>.toolbar a{cursor:pointer}div.code-toolbar>.toolbar button{background:none;border:0;color:inherit;font:inherit;line-height:normal;overflow:visible;padding:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none}div.code-toolbar>.toolbar a,div.code-toolbar>.toolbar button,div.code-toolbar>.toolbar span{color:#bbb;font-size:.8em;padding:0 .5em;background:#f5f2f0;background:hsla(0,0%,87.8%,.2);box-shadow:0 2px 0 0 rgba(0,0,0,.2);border-radius:.5em}div.code-toolbar>.toolbar a:focus,div.code-toolbar>.toolbar a:hover,div.code-toolbar>.toolbar button:focus,div.code-toolbar>.toolbar button:hover,div.code-toolbar>.toolbar span:focus,div.code-toolbar>.toolbar span:hover{color:inherit;text-decoration:none}code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;tab-size:4;-webkit-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.showReplies{color:#00f;cursor:pointer;font-size:14px;padding:8px 16px}pre{display:block;color:#212529;font-family:Inter}.commentContainerMain{margin:33px 0}#content p{font-family:helvetica;margin:17px 0}#content p,.contentBox{font-size:15pt}.commentContainer{font-size:14pt;font-family:helvetica}.commentError{font-size:10pt;margin:8px}@media screen and (max-width:768px){.commentImg{display:none!important}div.toolbar-item button{margin-right:0}#video-box2 pre code{font-size:10px}pre[class*=language-]{font-size:6pt}img{max-width:100%;height:auto}.contentBox{word-wrap:break-word}#content h1{font-size:27px}}.contentBox img{border:2px solid #e6e6e6;padding:7px;border-radius:12px}h2,h3,h4,h5,h6{margin:25px 0 9px}.commentPre{overflow-x:auto;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}</style><style ng-transition="serverApp"></style><meta name="keywords" content="javascript cheatsheet, javascript, javascript cheatsheet for beginners"><meta name="description" content="JavaScript Cheatsheet"></head>
+
+<body>
+  
+ <h1>JavaScript Cheatsheet <a target="_blank" href="/dashboard/blogs/javascript-cheatsheet"><!----></a></h1><div class="text-center"><!----><span class="sr-only">Loading...</span></div><div class="contentBox"><div><h2>JavaScript Basics</h2>
+<p>Set of JavaScript basic syntax to add, execute and write basic programming paradigms in Javascript&nbsp;</p>
+<h3>On Page Script</h3>
+<p>Adding internal JavaScript to HTML</p>
+<pre class="language-markup"><code>&lt;script type="text/javascript"&gt; //JS code goes here &lt;/script&gt;
+</code></pre>
+<h3>External JS File</h3>
+<p>Adding external JavaScript to HTML</p>
+<pre class="language-markup"><code>&lt;script src="filename.js"&gt;&lt;/script&gt;</code></pre>
+<h3>Functions</h3>
+<p>JavaScript Function syntax</p>
+<pre class="language-javascript"><code>function nameOfFunction () {
+// function body 
+}</code></pre>
+<h3>DOM Element</h3>
+<p>Changing content of a DOM Element</p>
+<pre class="language-javascript"><code>document.getElementById("elementID").innerHTML = "Hello World!";</code></pre>
+<h3>Output</h3>
+<p>This will print the value of a in JavaScript console</p>
+<pre class="language-javascript"><code>console.log(a);</code></pre>
+<h2>Conditional Statements</h2>
+<p>Conditional statements are used to perform operations based on some conditions.</p>
+<h3>If Statement</h3>
+<p>The block of code to be executed, when the condition specified is true.</p>
+<pre class="language-javascript"><code>if (condition) {
+// block of code to be executed if the condition is true
+}</code></pre>
+<h3>If-else Statement</h3>
+<p>If the condition for the if block is false, then the else block will be executed.</p>
+<pre class="language-javascript"><code>if (condition) {
+// block of code to be executed if the condition is true
+} else {
+// block of code to be executed if the condition is false
+}</code></pre>
+<h3>Else-if Statement</h3>
+<p>A basic if-else ladder</p>
+<pre class="language-javascript"><code>if (condition1) {
+// block of code to be executed if condition1 is true
+} else if (condition2) {
+// block of code to be executed if the condition1 is false and condition2 is true
+} else {
+// block of code to be executed if the condition1 is false and condition2 is false
+}</code></pre>
+<h3>Switch Statement</h3>
+<p>Switch case statement in JavaScript</p>
+<pre class="language-javascript"><code>switch(expression) {
+case x:
+// code block
+break;
+case y:
+// code block
+break;
+default:
+// code block
+}</code></pre>
+<p></p></div><div><div>
+<h2>Iterative Statements (Loops)</h2>
+<p>Iterative statement facilitates programmer to execute any block of code lines repeatedly and can be controlled as per conditions added by the programmer.</p>
+<h3>For Loop</h3>
+<p>For loop syntax in javascript</p>
+<pre class="language-javascript"><code>for (statement 1; statement 2; statement 3) {
+// code block to be executed
+}</code></pre>
+<h3>While Loop</h3>
+<p>Runs the code till the specified condition is true</p>
+<pre class="language-javascript"><code>while (condition) {
+// code block to be executed
+}</code></pre>
+<h3>Do While Loop</h3>
+<p>A do while loop is executed at least once despite the condition being true or false</p>
+<pre class="language-javascript"><code>do {
+// run this code in block
+i++;
+} while (condition);</code></pre>
+<h2>Strings</h2>
+<p>The string is a sequence of characters that is used for storing and managing text data.</p>
+<h3>charAt method</h3>
+<p>Returns the character from the specified index.</p>
+<pre class="language-javascript"><code>str.charAt(3)</code></pre>
+<h3>concat method</h3>
+<p>Joins two or more strings together.</p>
+<pre class="language-javascript"><code>str1.concat(str2)</code></pre>
+<h3>index of method</h3>
+<p>Returns the index of the first occurrence of the specified character from the string else -1 if not found.</p>
+<pre class="language-javascript"><code>str.indexOf('substr')</code></pre>
+<h3>match method</h3>
+<p>Searches a string for a match against a regular expression.</p>
+<pre class="language-javascript"><code>str.match(/(chapter \d+(\.\d)*)/i;)</code></pre>
+<h3>replace method</h3>
+<p>Searches a string for a match against a specified string or char and returns a new string by replacing the specified values.</p>
+<pre class="language-javascript"><code>str1.replace(str2)</code></pre>
+<h3>search method</h3>
+<p>Searches a string against a specified value.</p>
+<pre class="language-javascript"><code>str.search('term')</code></pre>
+<h3>split method</h3>
+<p>Splits a string into an array consisting of substrings.</p>
+<pre class="language-javascript"><code>str.split('\n')</code></pre>
+<h3>substring method</h3>
+<p>Returns a substring of a string containing characters from the specified indices.</p>
+<pre class="language-javascript"><code>str.substring(0,5)</code></pre>
+<p></p></div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense></div><div><div>
+<h2>Arrays</h2>
+<p>The array is a collection of data items of the same type. In simple terms, it is a variable that contains multiple values.</p>
+<h3>variable</h3>
+<p>Containers for storing data.</p>
+<pre class="language-javascript"><code>var fruit = ["element1", "element2", "element3"];</code></pre>
+<h3>concat method</h3>
+<p>Joins two or more arrays together.</p>
+<pre class="language-javascript"><code>concat()</code></pre>
+<h3>indexOf method</h3>
+<p>Returns the index of the specified item from the array.</p>
+<pre class="language-javascript"><code>indexOf()</code></pre>
+<h3>join method</h3>
+<p>Converts the array elements to a string.</p>
+<pre class="language-javascript"><code>join()</code></pre>
+<h3>pop method</h3>
+<p>Deletes the last element of the array.</p>
+<pre class="language-javascript"><code>pop()</code></pre>
+<h3>reverse method</h3>
+<p>This method reverses the order of the array elements.</p>
+<pre class="language-javascript"><code>reverse()</code></pre>
+<h3>sort method</h3>
+<p>Sorts the array elements in a specified manner.</p>
+<pre class="language-javascript"><code>sort()</code></pre>
+<h3>toString method</h3>
+<p>Converts the array elements to a string.</p>
+<pre class="language-javascript"><code>toString()</code></pre>
+<h3>valueOf method</h3>
+<p>returns the relevant Number Object holding the value of the argument passed</p>
+<pre class="language-javascript"><code>valueOf()</code></pre>
+<h2>Number Methods</h2>
+<p>JS math and number objects provide several constant and methods to perform mathematical operations.</p>
+<h3>toExponential method</h3>
+<p>Converts a number to its exponential form.</p>
+<pre class="language-javascript"><code>toExponential()</code></pre>
+<h3>toPrecision method</h3>
+<p>Formats a number into a specified length.</p>
+<pre class="language-javascript"><code>toPrecision()</code></pre>
+<h3>toString method</h3>
+<p>Converts an object to a string</p>
+<pre class="language-javascript"><code>toString()</code></pre>
+<h3>valueOf method</h3>
+<p>Returns the primitive value of a number.</p>
+<pre class="language-javascript"><code>valueOf()</code></pre>
+<h2>Maths Methods</h2>
+<h3>ceil method</h3>
+<p>Rounds a number upwards to the nearest integer, and returns the result</p>
+<pre class="language-javascript"><code>ceil(x)</code></pre>
+<h3>exp method</h3>
+<p>Returns the value of E^x.</p>
+<pre class="language-javascript"><code>exp(x)</code></pre>
+<h3>log method</h3>
+<p>Returns the logarithmic value of x.</p>
+<pre class="language-javascript"><code>log(x)</code></pre>
+<h3>pow method</h3>
+<p>Returns the value of x to the power y.</p>
+<pre class="language-javascript"><code>pow(x,y)</code></pre>
+<h3>random method</h3>
+<p>Returns a random number between 0 and 1.</p>
+<pre class="language-javascript"><code>random()</code></pre>
+<h3>sqrt method</h3>
+<p>Returns the square root of a number x</p>
+<pre class="language-javascript"><code>sqrt(x)</code></pre>
+<p></p></div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense></div><div><div>
+<h2>Dates</h2>
+<p>Date object is used to get the year, month and day. It has methods to get and set day, month, year, hour, minute, and seconds.</p>
+<h3>Pulling Date from the Date object</h3>
+<p>Returns the date from the date object</p>
+<pre class="language-javascript"><code>getDate()</code></pre>
+<h3>Pulling Day from the Date object</h3>
+<p>Returns the day from the date object</p>
+<pre class="language-javascript"><code>getDay()</code></pre>
+<h3>Pulling Hours from the Date object</h3>
+<p>Returns the hours from the date object</p>
+<pre class="language-javascript"><code>getHours()</code></pre>
+<h3>Pulling Minutes from the Date object</h3>
+<p>Returns the minutes from the date object</p>
+<pre class="language-javascript"><code>getMinutes()</code></pre>
+<h3>Pulling Seconds from the Date object</h3>
+<p>Returns the seconds from the date object</p>
+<pre class="language-javascript"><code>getSeconds()</code></pre>
+<h3>Pulling Time from the Date object</h3>
+<p>Returns the time from the date object</p>
+<pre class="language-javascript"><code>getTime()</code></pre>
+<h2>Mouse Events</h2>
+<p>Any change in the state of an object is referred to as an Event. With the help of JS, you can handle events, i.e., how any specific HTML tag will work when the user does something.</p>
+<h3>click</h3>
+<p>Fired when an element is clicked</p>
+<pre class="language-javascript"><code>element.addEventListener('click', ()=&gt;{
+// Code to be executed when the event is fired
+});</code></pre>
+<h3>oncontextmenu</h3>
+<p>Fired when an element is right-clicked</p>
+<pre class="language-javascript"><code>element.addEventListener('contextmenu', ()=&gt;{
+// Code to be executed when the event is fired
+});</code></pre>
+<h3>dblclick</h3>
+<p>Fired when an element is double-clicked</p>
+<pre class="language-javascript"><code>element.addEventListener('dblclick', ()=&gt;{
+// Code to be executed when the event is fired
+});</code></pre>
+<h3>mouseenter</h3>
+<p>Fired when an element is entered by the mouse arrow</p>
+<pre class="language-javascript"><code>element.addEventListener('mouseenter', ()=&gt;{
+// Code to be executed when the event is fired
+});</code></pre>
+<h3>mouseleave</h3>
+<p>Fired when an element is exited by the mouse arrow</p>
+<pre class="language-javascript"><code>element.addEventListener('mouseleave', ()=&gt;{
+// Code to be executed when the event is fired
+});</code></pre>
+<h3>mousemove</h3>
+<p>Fired when the mouse is moved inside the element</p>
+<pre class="language-javascript"><code>element.addEventListener('mousemove', ()=&gt;{
+// Code to be executed when the event is fired
+});</code></pre>
+<h2>Keyboard Events</h2>
+<h3>keydown</h3>
+<p>Fired when the user is pressing a key on the keyboard</p>
+<pre class="language-javascript"><code>element.addEventListener('keydown', ()=&gt;{
+// Code to be executed when the event is fired
+});</code></pre>
+<h2>&nbsp;</h2>
+<h3>keypress</h3>
+<p>Fired when the user presses the key on the keyboard</p>
+<pre class="language-javascript"><code>element.addEventListener('keypress', ()=&gt;{
+// Code to be executed when the event is fired
+});</code></pre>
+<h3>keyup</h3>
+<p>Fired when the user releases a key on the keyboard</p>
+<pre class="language-javascript"><code>element.addEventListener('keyup', ()=&gt;{
+// Code to be executed when the event is fired
+});</code></pre>
+<p></p></div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense></div><div><div>
+<h2>Errors</h2>
+<p>Errors are thrown by the compiler or interpreter whenever they find any fault in the code, and it can be of any type like syntax error, run-time error, logical error, etc. JS provides some functions to handle the errors.</p>
+<h3>try and catch</h3>
+<p>Try the code block and execute catch when err is thrown</p>
+<pre class="language-javascript"><code>try {
+Block of code to try
+}
+catch(err) {
+Block of code to handle errors
+}</code></pre>
+<h2>Window Methods</h2>
+<p>Methods that are available from the window object</p>
+<h3>alert method</h3>
+<p>Used to alert something on the screen</p>
+<pre class="language-javascript"><code>alert()</code></pre>
+<h3>blur method</h3>
+<p>The blur() method removes focus from the current window.</p>
+<pre class="language-javascript"><code>blur()</code></pre>
+<h3>setInterval</h3>
+<p>Keeps executing code at a certain interval</p>
+<pre class="language-javascript"><code>setInterval(() =&gt; {
+// Code to be executed
+}, 1000);</code></pre>
+<h3>setTimeout</h3>
+<p>Executes the code after a certain interval of time</p>
+<pre class="language-javascript"><code>setTimeout(() =&gt; {
+// Code to be executed
+}, 1000);</code></pre>
+<h3>close</h3>
+<p>The Window. close() method closes the current window</p>
+<pre class="language-javascript"><code>window.close()</code></pre>
+<h3>confirm</h3>
+<p>The window.confirm() instructs the browser to display a dialog with an optional message, and to wait until the user either confirms or cancels</p>
+<pre class="language-javascript"><code>window.confirm('Are you sure?')</code></pre>
+<h3>open</h3>
+<p>Opens a new window</p>
+<pre class="language-javascript"><code>window.open("https://www.codewithharry.com");</code></pre>
+<h3>prompt</h3>
+<p>Prompts the user with a text and takes a value. Second parameter is the default value</p>
+<pre class="language-javascript"><code>var name = prompt("What is your name?", "Harry");</code></pre>
+<h3>scrollBy</h3>
+<pre class="language-javascript"><code>window.scrollBy(100, 0); // Scroll 100px to the right</code></pre>
+<h3>scrollTo</h3>
+<p>Scrolls the document to the specified coordinates.</p>
+<pre class="language-javascript"><code>window.scrollTo(500, 0); // Scroll to horizontal position 500</code></pre>
+<h3>clearInterval</h3>
+<p>Clears the setInterval. var is the value returned by setInterval call</p>
+<pre class="language-javascript"><code>clearInterval(var)</code></pre>
+<h3>clearTimeout</h3>
+<p>Clears the setTimeout. var is the value returned by setTimeout call</p>
+<pre class="language-javascript"><code>clearTimeout(var)</code></pre>
+<h3>stop</h3>
+<p>Stops the further resource loading</p>
+<pre class="language-javascript"><code>stop()</code></pre>
+<p></p></div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense></div><div><div>
+<h2>Query/Get Elements</h2>
+<p>The browser creates a DOM (Document Object Model) whenever a web page is loaded, and with the help of HTML DOM, one can access and modify all the elements of the HTML document.</p>
+<h3>querySelector</h3>
+<p>Selector to select first matching element</p>
+<pre class="language-javascript"><code>document.querySelector('css-selectors')</code></pre>
+<h3>querySelectorAll</h3>
+<p>A selector to select all matching elements</p>
+<pre class="language-javascript"><code>document.querySelectorAll('css-selectors', ...)</code></pre>
+<h3>getElementsByTagName</h3>
+<p>Select elements by tag name</p>
+<pre class="language-javascript"><code>document.getElementsByTagName('element-name')</code></pre>
+<h3>getElementsByClassName</h3>
+<p>Select elements by class name</p>
+<pre class="language-javascript"><code>document.getElementsByClassName('class-name')</code></pre>
+<h3>Get Element by Id</h3>
+<p>Select an element by its id</p>
+<pre class="language-javascript"><code>document.getElementById('id')</code></pre>
+<h2>Creating Elements</h2>
+<p>Create new elements in the DOM</p>
+<h3>createElement</h3>
+<p>Create a new element</p>
+<pre class="language-javascript"><code>document.createElement('div')</code></pre>
+<h3>createTextNode</h3>
+<p>Create a new text node</p>
+<pre class="language-javascript"><code>document.createTextNode('some text here')</code></pre>
+<p>&nbsp;</p>
+<div><a class="btn btn-danger" role="button" href="https://api.codewithharry.com/media/blogFiles/javascript-cheatsheet/JavaScript_Cheatsheet_CodeWithHarry.pdf" target="_blank" rel="noopener"> Download this Cheatsheet</a></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div></div><app-adsense adtype="ad" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-client="ca-pub-9655830461045889" data-ad-slot="7409118598" class="adsbygoogle" style="display: inline-block; width: 250px; height: 200px;"></ins></div><!----><!----><!----><!----></div></app-adsense></div><!----><!----><!----></div><app-adsense adtype="adia" _nghost-sc50=""><div _ngcontent-sc50="" class="text-center"><!----><!----><div _ngcontent-sc50="" class="text-center"><ins _ngcontent-sc50="" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-9655830461045889" data-ad-slot="6621930351" class="adsbygoogle" style="display: block; text-align: center;"></ins></div><!----><!----></div></app-adsense><hr><div class="container my-4"><div id="comments" class="container px-0"><div class="commentContainerMain"><h2>You need to be logged in to post a comment!</h2></div><!----><h2>Comments</h2><p class="mx-1"> No comments to display. Be the first person to post a comment! </p><!----><!----></div><!----><div class="container my-4 px-0"><!----></div></div></div></div></app-blog-page><!----></div><app-footer _ngcontent-sc76="" _nghost-sc75=""><footer _ngcontent-sc75="" class="container-fluid bg-dark my-0 py-3 text-light"><p _ngcontent-sc75="" class="mb-0 text-center">Copyright © 2020-2021 CodeWithHarry.com</p></footer></app-footer></app-root>
+<script src="runtime.7b63b9fd40098a2e8207.js" defer=""></script><script src="polyfills.00096ed7d93ed26ee6df.js" defer=""></script><script src="scripts.2558b03aa1b9660ed84d.js" defer=""></script><script src="main.bd8a3a7a366ac101c3dc.js" defer=""></script>
+
+
+<script id="serverApp-state" type="application/json">{&q;G.https://api.codewithharry.com/blog/getblog/javascript-cheatsheet?&q;:{&q;body&q;:{&q;title&q;:&q;JavaScript Cheatsheet&q;,&q;content&q;:&q;&l;h2&g;JavaScript Basics&l;/h2&g;\n&l;p&g;Set of JavaScript basic syntax to add, execute and write basic programming paradigms in Javascript&a;nbsp;&l;/p&g;\n&l;h3&g;On Page Script&l;/h3&g;\n&l;p&g;Adding internal JavaScript to HTML&l;/p&g;\n&l;pre class=\&q;language-markup\&q;&g;&l;code&g;&a;lt;script type=\&q;text/javascript\&q;&a;gt; //JS code goes here &a;lt;/script&a;gt;\n&l;/code&g;&l;/pre&g;\n&l;h3&g;External JS File&l;/h3&g;\n&l;p&g;Adding external JavaScript to HTML&l;/p&g;\n&l;pre class=\&q;language-markup\&q;&g;&l;code&g;&a;lt;script src=\&q;filename.js\&q;&a;gt;&a;lt;/script&a;gt;&l;/code&g;&l;/pre&g;\n&l;h3&g;Functions&l;/h3&g;\n&l;p&g;JavaScript Function syntax&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;function nameOfFunction () {\n// function body \n}&l;/code&g;&l;/pre&g;\n&l;h3&g;DOM Element&l;/h3&g;\n&l;p&g;Changing content of a DOM Element&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;document.getElementById(\&q;elementID\&q;).innerHTML = \&q;Hello World!\&q;;&l;/code&g;&l;/pre&g;\n&l;h3&g;Output&l;/h3&g;\n&l;p&g;This will print the value of a in JavaScript console&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;console.log(a);&l;/code&g;&l;/pre&g;\n&l;h2&g;Conditional Statements&l;/h2&g;\n&l;p&g;Conditional statements are used to perform operations based on some conditions.&l;/p&g;\n&l;h3&g;If Statement&l;/h3&g;\n&l;p&g;The block of code to be executed, when the condition specified is true.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;if (condition) {\n// block of code to be executed if the condition is true\n}&l;/code&g;&l;/pre&g;\n&l;h3&g;If-else Statement&l;/h3&g;\n&l;p&g;If the condition for the if block is false, then the else block will be executed.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;if (condition) {\n// block of code to be executed if the condition is true\n} else {\n// block of code to be executed if the condition is false\n}&l;/code&g;&l;/pre&g;\n&l;h3&g;Else-if Statement&l;/h3&g;\n&l;p&g;A basic if-else ladder&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;if (condition1) {\n// block of code to be executed if condition1 is true\n} else if (condition2) {\n// block of code to be executed if the condition1 is false and condition2 is true\n} else {\n// block of code to be executed if the condition1 is false and condition2 is false\n}&l;/code&g;&l;/pre&g;\n&l;h3&g;Switch Statement&l;/h3&g;\n&l;p&g;Switch case statement in JavaScript&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;switch(expression) {\ncase x:\n// code block\nbreak;\ncase y:\n// code block\nbreak;\ndefault:\n// code block\n}&l;/code&g;&l;/pre&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;h2&g;Iterative Statements (Loops)&l;/h2&g;\n&l;p&g;Iterative statement facilitates programmer to execute any block of code lines repeatedly and can be controlled as per conditions added by the programmer.&l;/p&g;\n&l;h3&g;For Loop&l;/h3&g;\n&l;p&g;For loop syntax in javascript&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;for (statement 1; statement 2; statement 3) {\n// code block to be executed\n}&l;/code&g;&l;/pre&g;\n&l;h3&g;While Loop&l;/h3&g;\n&l;p&g;Runs the code till the specified condition is true&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;while (condition) {\n// code block to be executed\n}&l;/code&g;&l;/pre&g;\n&l;h3&g;Do While Loop&l;/h3&g;\n&l;p&g;A do while loop is executed at least once despite the condition being true or false&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;do {\n// run this code in block\ni++;\n} while (condition);&l;/code&g;&l;/pre&g;\n&l;h2&g;Strings&l;/h2&g;\n&l;p&g;The string is a sequence of characters that is used for storing and managing text data.&l;/p&g;\n&l;h3&g;charAt method&l;/h3&g;\n&l;p&g;Returns the character from the specified index.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;str.charAt(3)&l;/code&g;&l;/pre&g;\n&l;h3&g;concat method&l;/h3&g;\n&l;p&g;Joins two or more strings together.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;str1.concat(str2)&l;/code&g;&l;/pre&g;\n&l;h3&g;index of method&l;/h3&g;\n&l;p&g;Returns the index of the first occurrence of the specified character from the string else -1 if not found.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;str.indexOf(&s;substr&s;)&l;/code&g;&l;/pre&g;\n&l;h3&g;match method&l;/h3&g;\n&l;p&g;Searches a string for a match against a regular expression.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;str.match(/(chapter \\d+(\\.\\d)*)/i;)&l;/code&g;&l;/pre&g;\n&l;h3&g;replace method&l;/h3&g;\n&l;p&g;Searches a string for a match against a specified string or char and returns a new string by replacing the specified values.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;str1.replace(str2)&l;/code&g;&l;/pre&g;\n&l;h3&g;search method&l;/h3&g;\n&l;p&g;Searches a string against a specified value.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;str.search(&s;term&s;)&l;/code&g;&l;/pre&g;\n&l;h3&g;split method&l;/h3&g;\n&l;p&g;Splits a string into an array consisting of substrings.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;str.split(&s;\\n&s;)&l;/code&g;&l;/pre&g;\n&l;h3&g;substring method&l;/h3&g;\n&l;p&g;Returns a substring of a string containing characters from the specified indices.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;str.substring(0,5)&l;/code&g;&l;/pre&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;h2&g;Arrays&l;/h2&g;\n&l;p&g;The array is a collection of data items of the same type. In simple terms, it is a variable that contains multiple values.&l;/p&g;\n&l;h3&g;variable&l;/h3&g;\n&l;p&g;Containers for storing data.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;var fruit = [\&q;element1\&q;, \&q;element2\&q;, \&q;element3\&q;];&l;/code&g;&l;/pre&g;\n&l;h3&g;concat method&l;/h3&g;\n&l;p&g;Joins two or more arrays together.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;concat()&l;/code&g;&l;/pre&g;\n&l;h3&g;indexOf method&l;/h3&g;\n&l;p&g;Returns the index of the specified item from the array.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;indexOf()&l;/code&g;&l;/pre&g;\n&l;h3&g;join method&l;/h3&g;\n&l;p&g;Converts the array elements to a string.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;join()&l;/code&g;&l;/pre&g;\n&l;h3&g;pop method&l;/h3&g;\n&l;p&g;Deletes the last element of the array.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;pop()&l;/code&g;&l;/pre&g;\n&l;h3&g;reverse method&l;/h3&g;\n&l;p&g;This method reverses the order of the array elements.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;reverse()&l;/code&g;&l;/pre&g;\n&l;h3&g;sort method&l;/h3&g;\n&l;p&g;Sorts the array elements in a specified manner.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;sort()&l;/code&g;&l;/pre&g;\n&l;h3&g;toString method&l;/h3&g;\n&l;p&g;Converts the array elements to a string.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;toString()&l;/code&g;&l;/pre&g;\n&l;h3&g;valueOf method&l;/h3&g;\n&l;p&g;returns the relevant Number Object holding the value of the argument passed&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;valueOf()&l;/code&g;&l;/pre&g;\n&l;h2&g;Number Methods&l;/h2&g;\n&l;p&g;JS math and number objects provide several constant and methods to perform mathematical operations.&l;/p&g;\n&l;h3&g;toExponential method&l;/h3&g;\n&l;p&g;Converts a number to its exponential form.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;toExponential()&l;/code&g;&l;/pre&g;\n&l;h3&g;toPrecision method&l;/h3&g;\n&l;p&g;Formats a number into a specified length.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;toPrecision()&l;/code&g;&l;/pre&g;\n&l;h3&g;toString method&l;/h3&g;\n&l;p&g;Converts an object to a string&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;toString()&l;/code&g;&l;/pre&g;\n&l;h3&g;valueOf method&l;/h3&g;\n&l;p&g;Returns the primitive value of a number.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;valueOf()&l;/code&g;&l;/pre&g;\n&l;h2&g;Maths Methods&l;/h2&g;\n&l;h3&g;ceil method&l;/h3&g;\n&l;p&g;Rounds a number upwards to the nearest integer, and returns the result&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;ceil(x)&l;/code&g;&l;/pre&g;\n&l;h3&g;exp method&l;/h3&g;\n&l;p&g;Returns the value of E^x.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;exp(x)&l;/code&g;&l;/pre&g;\n&l;h3&g;log method&l;/h3&g;\n&l;p&g;Returns the logarithmic value of x.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;log(x)&l;/code&g;&l;/pre&g;\n&l;h3&g;pow method&l;/h3&g;\n&l;p&g;Returns the value of x to the power y.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;pow(x,y)&l;/code&g;&l;/pre&g;\n&l;h3&g;random method&l;/h3&g;\n&l;p&g;Returns a random number between 0 and 1.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;random()&l;/code&g;&l;/pre&g;\n&l;h3&g;sqrt method&l;/h3&g;\n&l;p&g;Returns the square root of a number x&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;sqrt(x)&l;/code&g;&l;/pre&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;h2&g;Dates&l;/h2&g;\n&l;p&g;Date object is used to get the year, month and day. It has methods to get and set day, month, year, hour, minute, and seconds.&l;/p&g;\n&l;h3&g;Pulling Date from the Date object&l;/h3&g;\n&l;p&g;Returns the date from the date object&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;getDate()&l;/code&g;&l;/pre&g;\n&l;h3&g;Pulling Day from the Date object&l;/h3&g;\n&l;p&g;Returns the day from the date object&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;getDay()&l;/code&g;&l;/pre&g;\n&l;h3&g;Pulling Hours from the Date object&l;/h3&g;\n&l;p&g;Returns the hours from the date object&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;getHours()&l;/code&g;&l;/pre&g;\n&l;h3&g;Pulling Minutes from the Date object&l;/h3&g;\n&l;p&g;Returns the minutes from the date object&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;getMinutes()&l;/code&g;&l;/pre&g;\n&l;h3&g;Pulling Seconds from the Date object&l;/h3&g;\n&l;p&g;Returns the seconds from the date object&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;getSeconds()&l;/code&g;&l;/pre&g;\n&l;h3&g;Pulling Time from the Date object&l;/h3&g;\n&l;p&g;Returns the time from the date object&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;getTime()&l;/code&g;&l;/pre&g;\n&l;h2&g;Mouse Events&l;/h2&g;\n&l;p&g;Any change in the state of an object is referred to as an Event. With the help of JS, you can handle events, i.e., how any specific HTML tag will work when the user does something.&l;/p&g;\n&l;h3&g;click&l;/h3&g;\n&l;p&g;Fired when an element is clicked&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;element.addEventListener(&s;click&s;, ()=&a;gt;{\n// Code to be executed when the event is fired\n});&l;/code&g;&l;/pre&g;\n&l;h3&g;oncontextmenu&l;/h3&g;\n&l;p&g;Fired when an element is right-clicked&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;element.addEventListener(&s;contextmenu&s;, ()=&a;gt;{\n// Code to be executed when the event is fired\n});&l;/code&g;&l;/pre&g;\n&l;h3&g;dblclick&l;/h3&g;\n&l;p&g;Fired when an element is double-clicked&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;element.addEventListener(&s;dblclick&s;, ()=&a;gt;{\n// Code to be executed when the event is fired\n});&l;/code&g;&l;/pre&g;\n&l;h3&g;mouseenter&l;/h3&g;\n&l;p&g;Fired when an element is entered by the mouse arrow&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;element.addEventListener(&s;mouseenter&s;, ()=&a;gt;{\n// Code to be executed when the event is fired\n});&l;/code&g;&l;/pre&g;\n&l;h3&g;mouseleave&l;/h3&g;\n&l;p&g;Fired when an element is exited by the mouse arrow&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;element.addEventListener(&s;mouseleave&s;, ()=&a;gt;{\n// Code to be executed when the event is fired\n});&l;/code&g;&l;/pre&g;\n&l;h3&g;mousemove&l;/h3&g;\n&l;p&g;Fired when the mouse is moved inside the element&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;element.addEventListener(&s;mousemove&s;, ()=&a;gt;{\n// Code to be executed when the event is fired\n});&l;/code&g;&l;/pre&g;\n&l;h2&g;Keyboard Events&l;/h2&g;\n&l;h3&g;keydown&l;/h3&g;\n&l;p&g;Fired when the user is pressing a key on the keyboard&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;element.addEventListener(&s;keydown&s;, ()=&a;gt;{\n// Code to be executed when the event is fired\n});&l;/code&g;&l;/pre&g;\n&l;h2&g;&a;nbsp;&l;/h2&g;\n&l;h3&g;keypress&l;/h3&g;\n&l;p&g;Fired when the user presses the key on the keyboard&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;element.addEventListener(&s;keypress&s;, ()=&a;gt;{\n// Code to be executed when the event is fired\n});&l;/code&g;&l;/pre&g;\n&l;h3&g;keyup&l;/h3&g;\n&l;p&g;Fired when the user releases a key on the keyboard&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;element.addEventListener(&s;keyup&s;, ()=&a;gt;{\n// Code to be executed when the event is fired\n});&l;/code&g;&l;/pre&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;h2&g;Errors&l;/h2&g;\n&l;p&g;Errors are thrown by the compiler or interpreter whenever they find any fault in the code, and it can be of any type like syntax error, run-time error, logical error, etc. JS provides some functions to handle the errors.&l;/p&g;\n&l;h3&g;try and catch&l;/h3&g;\n&l;p&g;Try the code block and execute catch when err is thrown&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;try {\nBlock of code to try\n}\ncatch(err) {\nBlock of code to handle errors\n}&l;/code&g;&l;/pre&g;\n&l;h2&g;Window Methods&l;/h2&g;\n&l;p&g;Methods that are available from the window object&l;/p&g;\n&l;h3&g;alert method&l;/h3&g;\n&l;p&g;Used to alert something on the screen&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;alert()&l;/code&g;&l;/pre&g;\n&l;h3&g;blur method&l;/h3&g;\n&l;p&g;The blur() method removes focus from the current window.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;blur()&l;/code&g;&l;/pre&g;\n&l;h3&g;setInterval&l;/h3&g;\n&l;p&g;Keeps executing code at a certain interval&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;setInterval(() =&a;gt; {\n// Code to be executed\n}, 1000);&l;/code&g;&l;/pre&g;\n&l;h3&g;setTimeout&l;/h3&g;\n&l;p&g;Executes the code after a certain interval of time&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;setTimeout(() =&a;gt; {\n// Code to be executed\n}, 1000);&l;/code&g;&l;/pre&g;\n&l;h3&g;close&l;/h3&g;\n&l;p&g;The Window. close() method closes the current window&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;window.close()&l;/code&g;&l;/pre&g;\n&l;h3&g;confirm&l;/h3&g;\n&l;p&g;The window.confirm() instructs the browser to display a dialog with an optional message, and to wait until the user either confirms or cancels&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;window.confirm(&s;Are you sure?&s;)&l;/code&g;&l;/pre&g;\n&l;h3&g;open&l;/h3&g;\n&l;p&g;Opens a new window&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;window.open(\&q;https://www.codewithharry.com\&q;);&l;/code&g;&l;/pre&g;\n&l;h3&g;prompt&l;/h3&g;\n&l;p&g;Prompts the user with a text and takes a value. Second parameter is the default value&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;var name = prompt(\&q;What is your name?\&q;, \&q;Harry\&q;);&l;/code&g;&l;/pre&g;\n&l;h3&g;scrollBy&l;/h3&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;window.scrollBy(100, 0); // Scroll 100px to the right&l;/code&g;&l;/pre&g;\n&l;h3&g;scrollTo&l;/h3&g;\n&l;p&g;Scrolls the document to the specified coordinates.&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;window.scrollTo(500, 0); // Scroll to horizontal position 500&l;/code&g;&l;/pre&g;\n&l;h3&g;clearInterval&l;/h3&g;\n&l;p&g;Clears the setInterval. var is the value returned by setInterval call&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;clearInterval(var)&l;/code&g;&l;/pre&g;\n&l;h3&g;clearTimeout&l;/h3&g;\n&l;p&g;Clears the setTimeout. var is the value returned by setTimeout call&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;clearTimeout(var)&l;/code&g;&l;/pre&g;\n&l;h3&g;stop&l;/h3&g;\n&l;p&g;Stops the further resource loading&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;stop()&l;/code&g;&l;/pre&g;\n&l;p&g;&a;lt;|AD|&a;gt;&l;/p&g;\n&l;h2&g;Query/Get Elements&l;/h2&g;\n&l;p&g;The browser creates a DOM (Document Object Model) whenever a web page is loaded, and with the help of HTML DOM, one can access and modify all the elements of the HTML document.&l;/p&g;\n&l;h3&g;querySelector&l;/h3&g;\n&l;p&g;Selector to select first matching element&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;document.querySelector(&s;css-selectors&s;)&l;/code&g;&l;/pre&g;\n&l;h3&g;querySelectorAll&l;/h3&g;\n&l;p&g;A selector to select all matching elements&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;document.querySelectorAll(&s;css-selectors&s;, ...)&l;/code&g;&l;/pre&g;\n&l;h3&g;getElementsByTagName&l;/h3&g;\n&l;p&g;Select elements by tag name&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;document.getElementsByTagName(&s;element-name&s;)&l;/code&g;&l;/pre&g;\n&l;h3&g;getElementsByClassName&l;/h3&g;\n&l;p&g;Select elements by class name&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;document.getElementsByClassName(&s;class-name&s;)&l;/code&g;&l;/pre&g;\n&l;h3&g;Get Element by Id&l;/h3&g;\n&l;p&g;Select an element by its id&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;document.getElementById(&s;id&s;)&l;/code&g;&l;/pre&g;\n&l;h2&g;Creating Elements&l;/h2&g;\n&l;p&g;Create new elements in the DOM&l;/p&g;\n&l;h3&g;createElement&l;/h3&g;\n&l;p&g;Create a new element&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;document.createElement(&s;div&s;)&l;/code&g;&l;/pre&g;\n&l;h3&g;createTextNode&l;/h3&g;\n&l;p&g;Create a new text node&l;/p&g;\n&l;pre class=\&q;language-javascript\&q;&g;&l;code&g;document.createTextNode(&s;some text here&s;)&l;/code&g;&l;/pre&g;\n&l;p&g;&a;nbsp;&l;/p&g;\n&l;div&g;&l;a class=\&q;btn btn-danger\&q; role=\&q;button\&q; href=\&q;https://api.codewithharry.com/media/blogFiles/javascript-cheatsheet/JavaScript_Cheatsheet_CodeWithHarry.pdf\&q; target=\&q;_blank\&q; rel=\&q;noopener\&q;&g; Download this Cheatsheet&l;/a&g;&l;/div&g;\n&l;div&g;&a;nbsp;&l;/div&g;\n&l;div&g;&a;nbsp;&l;/div&g;&q;,&q;metaTags&q;:&q;javascript cheatsheet, javascript, javascript cheatsheet for beginners&q;,&q;metaDesc&q;:&q;JavaScript Cheatsheet&q;,&q;time&q;:&q;2021-07-16T13:24:46.666990&q;,&q;slug&q;:&q;javascript-cheatsheet&q;,&q;is_published&q;:true,&q;is_proofread&q;:false,&q;success&q;:true},&q;headers&q;:{&q;date&q;:[&q;Wed, 28 Jul 2021 00:10:15 GMT&q;],&q;server&q;:[&q;Apache/2.4.41 (Ubuntu)&q;],&q;vary&q;:[&q;Accept,Origin&q;],&q;allow&q;:[&q;GET, OPTIONS&q;],&q;x-frame-options&q;:[&q;DENY&q;],&q;content-length&q;:[&q;15943&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;referrer-policy&q;:[&q;same-origin&q;],&q;keep-alive&q;:[&q;timeout=5, max=100&q;],&q;connection&q;:[&q;Keep-Alive&q;],&q;content-type&q;:[&q;application/json&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://api.codewithharry.com/blog/getblog/javascript-cheatsheet&q;}}</script></body><!-- This page was prerendered with Angular Universal --></html>
