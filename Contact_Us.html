@@ -1,73 +1,443 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>Contact me</title>
-    
-    <style>
-      .Name{
-        border: 1px solid #75767B;
-        border-radius: 4px 4px;
-        padding: 10px;
-        width: 320px
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact me</title>
+
+  <style>
+    :root {
+      /* Theme 1 */
+      --bg-color: #0e121b;
+      --main-color: rgb(18, 22, 34);
+      --seccolor: #222a3980;
+      --text-color: rgb(255, 255, 255);
+      --text-color2: #000000;
+      --text-color3: #000000;
+      --gradient-top: rgba(74, 74, 74, 0.137);
+      --gradient-down: rgb(11, 14, 20);
+      --gradient-top2: rgba(207, 207, 207, 0.277);
+      --gradient-down2: rgba(207, 207, 207, 0.277);
+      --Card-bg-color: #191f27;
+      --text-light: #ffffff;
+      --text-muted: #a0aec0;
+
+      /* Theme 2 */
+      /* --bg-color: #ffffff;
+        --main-color: rgb(235, 235, 235);
+        --seccolor: #e3e3e380;
+        --text-color: #1F2937;
+        --text-color2: #000000;
+        --text-color3: #FFFFFF;
+        --gradient-top: rgba(255, 255, 255, 0.137);
+        --gradient-down: rgba(255, 255, 255, 0.763);
+        --gradient-top2:rgba(95, 94, 94, 0.277);
+        --gradient-down2: rgba(95, 94, 94, 0.277);
+        --Card-bg-color: #F3F4F6;
+        --text-light: #ffffff;
+        --text-muted: #ffffff; */
+    }
+
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      background-color: var(--text-color);
+      color: var(--bg-color);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      /* display: flex;
+        justify-content: space-between; */
+      background-color: var(--bg-color);
+      height: 10vh;
+      display: flow-root;
+      color: var(--text-color);
+      font-family: "Poppins", sans-serif;
+      width: 100vw;
+    }
+
+    .heading {
+      margin: 5px 5px 0px;
+      padding: 5px;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    nav>ul {
+      display: flex;
+      list-style: none;
+      margin: 5px;
+      padding-right: 15px;
+      float: right;
+      font-size: 0.75em;
+    }
+
+    ul>li {
+      padding: 7px;
+      margin: 5px;
+    }
+
+    .nav-items {
+      text-decoration: none;
+      display: inline-block;
+      color: var(--text-color);
+    }
+
+    .login {
+      border: 1px solid var(--seccolor);
+      border-radius: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    li:hover {
+      background-color: var(--seccolor);
+      border-radius: 10px;
+      /* transition: background-color 0.3s ease; */
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Full-width input fields */
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s;
+    }
+
+    @-webkit-keyframes animatezoom {
+      from {
+        -webkit-transform: scale(0);
       }
-      .Submit{
-        border: 1px solid #75767B;
-        border-radius: 4px 4px;
-        padding: 10px;
+
+      to {
+        -webkit-transform: scale(1);
       }
-    </style>
-  </head>
+    }
+
+    @keyframes animatezoom {
+      from {
+        transform: scale(0);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+
+      .cancelbtn {
+        width: 100%;
+      }
+    }
+
+    body {
+      background-color: var(--main-color);
+    }
+
+    /* Main Section */
+
+    .main-section {
+      /* border: 2px solid rgb(58, 237, 70); */
+      /* display: grid;
+      grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
+      gap: 30px; */
+
+    }
+
+    .container-2 {
+      color: var(--text-color);
+      text-align: left;
+      width: 300px;
+      margin: 60px;
+    }
+
+    .container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
+      gap: 30px;
+    }
+
+    .title {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    .title-1 {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 0.8em;
+    }
+
+    .my-image {
+      width: 300px;
+      height: 250px;
+      overflow: hidden;
+      margin: 0px;
+      margin-top: 25px;
+      padding: 0;
+    }
+
+    .my-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 15px;
+    }
+
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* border: 2px solid red; */
+    }
+
+    form{
+      border: 1px solid var(--seccolor);
+      border-radius: 10px;
+      padding: 20px;
+      color: var(--text-color)
+    }
+
+    .form-element{
+      /* border: 1px solid red; */
+      margin: 10px;
+    }
+
+    .single-form-section{
+      /* border: 2px solid rgb(58, 237, 70); */
+      margin: 15px;
+    }
+
+    .form-input{
+      background-color: var(--Card-bg-color);
+      color: var(--text-color);
+      border: none;
+    }
+  </style>
+</head>
 
 <body>
-  
-<!Forms-->
-  <div>
-    <font size="7">Contact me</font><br><br>
-    
-    <font size="5" color="#515257" >Your Name</font><br><br>
-    
-   <div>
-    <form>
-      <input type="search"  class="Name" placeholder="Enter your Name"/>
-    </form>
-  </div><br>
-  
-  <div>
-    
-    <font size="5" color="#515257" >Your Email</font><br><br>
-  </div>
-  
-  <div>
-    <form>
-      <input type="Email"  class="Name" placeholder="Enter your Email"/>
-  </div><br>
-  
-  <div>
-       
-    <font size="5" color="#515257" >Your Phone Number</font><br><br>
-    <form>
-      <input type="number"  class="Name" placeholder="Enter your Phone Number"/>
-  </div><br>
-  
-  <div>
-    
-    <font size="5" color="#515257" >Describe What you want to Contact me for here</font><br><br>
-    
-    
-  <textarea type="text" class="Name" placeholder="Your message"></textarea>
-  </div><br>
-  
-  <!Submit-->
-  <div>
-     <input type="Submit"  class="Submit"/>
-  </div>
-   
-  
-  <div>
-    </form>
-  </div>
-  
-  </div>
+  <header>
+    <nav>
+      <span class="heading">
+        <span style="font-weight: 700" class="logo-icon">&lt; / &gt; </span>
+        <span class="font-bold">Code With Manas</span>
+      </span>
+      <ul>
+        <li><a class="nav-items" href="index.html">Home</a></li>
+        <li><a class="nav-items" href="#footer-container">About</a></li>
+        <li><a class="nav-items" href="blogs.html">Blog</a></li>
+        <li><a class="nav-items" href="#Notes">Notes</a></li>
+        <li><a class="nav-items" href="Contact_Us.html">Contact Us</a></li>
+        <li class="login">
+          <button onclick="document.getElementById('id01').style.display = 'block'" style="
+                width: auto;
+                background: transparent;
+                border: none;
+                color: var(--text-color);
+                cursor: pointer;
+                font-family: inherit;
+              ">
+            Login
+          </button>
+
+          <div id="id01" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <span onclick="
+                      document.getElementById('id01').style.display = 'none'
+                    " class="close" title="Close Modal">&times;</span>
+
+                <img src="img_avatar2.png" alt="Avatar" class="avatar" />
+              </div>
+
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+
+                <input type="text" placeholder="Enter Username" name="uname" required />
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required />
+
+                <button type="submit">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember" />
+                  Remember me
+                </label>
+              </div>
+
+              <div class="container" style="background-color: #f1f1f1">
+                <button type="button" onclick="
+                      document.getElementById('id01').style.display = 'none'
+                    " class="cancelbtn">
+                  Cancel
+                </button>
+
+                <span class="psw">Forgot <a href="#">password?</a></span>
+              </div>
+            </form>
+          </div>
+
+          <!-- <a class="nav-items" href="Login.html">Login</a> -->
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-section">
+    <div class="container">
+    <div class="container-2">
+      <div class="title">
+        <h2>Contact Us</h2>
+      </div>
+      <div class="title-1">
+        We are available for questions, feedback, or collaboration
+        opportunities. Let us know how we can help!
+      </div>
+      <div class="title-2">
+        You can also contact us at contact@codewithmanas.com for any payment
+        or course access related queries.
+      </div>
+      <div class="my-image">
+        <img src="my_image.png" width="300px" alt="" />
+      </div>
+    </div>
+
+    <!-- Contact Us Form -->
+    <div class="form">
+      <form action="post">
+        <div>
+          <div class="single-form-section">
+            <label for="Name" class="form-element">Name</label><br>
+            <input class="form-element form-input" type="email" name="Name" placeholder="Your Name" />
+          </div>
+
+          <div class="single-form-section">
+            <label for="Email" class="form-element">Email</label><br>
+            <input class="form-element form-input" type="email" name="Email" placeholder="Email" />
+          </div>
+
+          <div class="single-form-section">
+            <label for="Contact-no" class="form-element">Phone Number</label><br>
+            <input class="form-element form-input" type="number" name="Contact-no " placeholder="Your 10-Digit Number" />
+          </div>
+
+          <div class="single-form-section">
+            <label for="message" class="form-element">Message</label><br>
+            <textarea class="form-element form-input" name="message" id="" placeholder="Type your message here!"></textarea>
+          </div>
+      </form>
+    </div>
+    </div>
+  </main>
 </body>
 
 </html>
