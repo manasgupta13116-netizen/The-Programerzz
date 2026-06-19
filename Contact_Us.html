@@ -1,46 +1,29 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact me</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      /* Theme 1 */
+      /* Theme colors variables */
       --bg-color: #0e121b;
       --main-color: rgb(18, 22, 34);
       --seccolor: #222a3980;
       --text-color: rgb(255, 255, 255);
-      --text-color2: #000000;
-      --text-color3: #000000;
-      --gradient-top: rgba(74, 74, 74, 0.137);
-      --gradient-down: rgb(11, 14, 20);
-      --gradient-top2: rgba(207, 207, 207, 0.277);
-      --gradient-down2: rgba(207, 207, 207, 0.277);
       --Card-bg-color: #191f27;
-      --text-light: #ffffff;
       --text-muted: #a0aec0;
-
-      /* Theme 2 */
-      /* --bg-color: #ffffff;
-        --main-color: rgb(235, 235, 235);
-        --seccolor: #e3e3e380;
-        --text-color: #1F2937;
-        --text-color2: #000000;
-        --text-color3: #FFFFFF;
-        --gradient-top: rgba(255, 255, 255, 0.137);
-        --gradient-down: rgba(255, 255, 255, 0.763);
-        --gradient-top2:rgba(95, 94, 94, 0.277);
-        --gradient-down2: rgba(95, 94, 94, 0.277);
-        --Card-bg-color: #F3F4F6;
-        --text-light: #ffffff;
-        --text-muted: #ffffff; */
     }
 
     * {
-      margin: 0px;
-      padding: 0px;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
@@ -53,266 +36,331 @@
       scroll-behavior: smooth;
     }
 
-    /* Navigation Bar */
+    body {
+      font-family: 'POppins';
+      background-color: var(--main-color);
+      color: var(--text-color);
+      min-height: 100vh;
+    }
+
+    /* --- Navigation Bar --- */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--seccolor);
     }
 
     nav {
-      /* display: flex;
-        justify-content: space-between; */
-      background-color: var(--bg-color);
-      height: 10vh;
-      display: flow-root;
-      color: var(--text-color);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-family: "Poppins", sans-serif;
-      width: 100vw;
     }
 
     .heading {
-      margin: 5px 5px 0px;
-      padding: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .font-bold {
       font-weight: 700;
     }
 
-    nav>ul {
+    nav > ul {
       display: flex;
+      align-items: center;
       list-style: none;
-      margin: 5px;
-      padding-right: 15px;
-      float: right;
-      font-size: 0.75em;
+      gap: 5px;
+      font-size: 0.85em;
     }
 
-    ul>li {
-      padding: 7px;
-      margin: 5px;
+    ul > li {
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+    }
+
+    ul > li:hover {
+      background-color: var(--seccolor);
     }
 
     .nav-items {
       text-decoration: none;
-      display: inline-block;
       color: var(--text-color);
     }
 
     .login {
       border: 1px solid var(--seccolor);
-      border-radius: 10px;
-      padding-top: 5px;
-      padding-bottom: 5px;
     }
 
-    li:hover {
-      background-color: var(--seccolor);
-      border-radius: 10px;
-      /* transition: background-color 0.3s ease; */
+    .login-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-color);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    /* --- Main Section Layout --- */
+    .main-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
-    /* Full-width input fields */
-    input[type="text"],
-    input[type="password"] {
+    /* Grid wrapper separating description and the form container */
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* Left Info Block */
+    .info-container {
+      max-width: 480px;
+    }
+
+    .title h2 {
+      font-family: "Poppins", sans-serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .title-1 {
+      color: var(--text-color);
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .title-2 {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .my-image {
+      margin-top: 30px;
       width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
+      max-width: 380px;
+    }
+
+    .my-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    /* Right Form Block */
+    .form-container {
+      width: 100%;
+    }
+
+    form {
+      background-color: rgba(25, 31, 39, 0.3);
+      border: 1px solid var(--seccolor);
+      border-radius: 12px;
+      padding: 30px 25px;
+      width: 100%;
+    }
+
+    .single-form-section {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
       display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
     }
 
-    button:hover {
-      opacity: 0.8;
+    .form-input {
+      width: 100%;
+      background-color: var(--Card-bg-color);
+      color: var(--text-color);
+      border: 1px solid var(--seccolor);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease;
     }
 
-    .cancelbtn {
-      width: auto;
-      padding: 10px 18px;
-      background-color: #f44336;
+    .form-input:focus {
+      outline: none;
+      border-color: var(--text-muted);
     }
 
-    .imgcontainer {
-      text-align: center;
-      margin: 24px 0 12px 0;
-      position: relative;
+    textarea.form-input {
+      min-height: 120px;
+      resize: vertical;
     }
 
-    img.avatar {
-      width: 40%;
-      border-radius: 50%;
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background-color: var(--text-color);
+      color: var(--main-color);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
     }
 
-    .container {
-      padding: 16px;
+    .submit-btn:hover {
+      opacity: 0.9;
     }
 
-    span.psw {
-      float: right;
-      padding-top: 16px;
-    }
-
-    /* The Modal (background) */
+    /* --- Login Modal Window --- */
     .modal {
       display: none;
       position: fixed;
-      z-index: 1;
+      z-index: 1000;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
       padding-top: 60px;
     }
 
-    /* Modal Content/Box */
     .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto 15% auto;
-      border: 1px solid #888;
-      width: 80%;
+      background-color: #1a202c;
+      color: white;
+      margin: 5% auto;
+      border: 1px solid #2d3748;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 450px;
+      overflow: hidden;
     }
 
-    /* The Close Button (x) */
+    .imgcontainer {
+      text-align: center;
+      padding: 25px 20px 10px;
+      position: relative;
+    }
+
+    img.avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
+
     .close {
       position: absolute;
-      right: 25px;
-      top: 0;
-      color: #000;
-      font-size: 35px;
+      right: 20px;
+      top: 15px;
+      color: var(--text-muted);
+      font-size: 30px;
       font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: red;
       cursor: pointer;
     }
 
-    /* Add Zoom Animation */
-    .animate {
-      -webkit-animation: animatezoom 0.6s;
-      animation: animatezoom 0.6s;
+    .close:hover {
+      color: #f44336;
     }
 
-    @-webkit-keyframes animatezoom {
-      from {
-        -webkit-transform: scale(0);
-      }
+    .modal-body {
+      padding: 20px 30px;
+    }
 
-      to {
-        -webkit-transform: scale(1);
-      }
+    .modal-body label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    .modal-body input[type="text"],
+    .modal-body input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      background-color: #2d3748;
+      border: 1px solid #4a5568;
+      color: white;
+      border-radius: 6px;
+    }
+
+    .modal-login-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #3182ce;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .modal-footer {
+      background-color: #141923;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cancelbtn {
+      padding: 8px 16px;
+      background-color: #e53e3e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .psw a {
+      color: #63b3ed;
+      text-decoration: none;
+    }
+
+    .animate {
+      animation: animatezoom 0.4s ease;
     }
 
     @keyframes animatezoom {
-      from {
-        transform: scale(0);
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* --- Responsive Breakpoints --- */
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
       }
-
-      to {
-        transform: scale(1);
+      nav > ul {
+        flex-wrap: wrap;
+        justify-content: center;
       }
-    }
-
-    /* Change styles for span and cancel button on extra small screens */
-    @media screen and (max-width: 300px) {
-      span.psw {
-        display: block;
-        float: none;
+      .content-grid {
+        gap: 35px;
       }
-
-      .cancelbtn {
-        width: 100%;
+      .info-container {
+        max-width: 100%;
+        text-align: center;
       }
-    }
-
-    body {
-      background-color: var(--main-color);
-    }
-
-    /* Main Section */
-    .main-section{
-      
-    }
-
-    .container{
-      display: grid;
-      grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
-      gap: 20px;
-    }
-    
-    .card{
-      color: var(--text-color);
-      text-align: center;
-      width: 300px;
-      margin: 60px;
-      /* border: 2px solid red; */
-    }
-    
-
-    .title {
-      font-size: 1em;
-      margin-bottom: 20px;
-    }
-
-    .title-1 {
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      font-size: 0.8em;
-    }
-
-    .my-image {
-      width: 300px;
-      height: 250px;
-      overflow: hidden;
-      margin: 0px;
-      margin-top: 25px;
-      padding: 0;
-    }
-
-    .my-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 15px;
-    }
-
-
-    form{
-      border: 1px solid var(--seccolor);
-      border-radius: 10px;
-      padding: 20px;
-      color: var(--text-color)
-    }
-
-    .form-element{
-      /* border: 1px solid red; */
-      margin: 10px;
-    }
-
-    .single-form-section{
-      /* border: 2px solid rgb(58, 237, 70); */
-      margin: 15px;
-    }
-
-    .form-input{
-      background-color: var(--Card-bg-color);
-      color: var(--text-color);
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      /* max-width: 50vw; */
-      
+      .my-image {
+        margin: 25px auto 0;
+      }
     }
   </style>
 </head>
@@ -331,104 +379,87 @@
         <li><a class="nav-items" href="#Notes">Notes</a></li>
         <li><a class="nav-items" href="Contact_Us.html">Contact Us</a></li>
         <li class="login">
-          <button onclick="document.getElementById('id01').style.display = 'block'" style="
-                width: auto;
-                background: transparent;
-                border: none;
-                color: var(--text-color);
-                cursor: pointer;
-                font-family: inherit;
-              ">
+          <button class="login-btn" onclick="document.getElementById('id01').style.display = 'block'">
             Login
           </button>
-
-          <div id="id01" class="modal">
-            <form class="modal-content animate" action="/action_page.php" method="post">
-              <div class="imgcontainer">
-                <span onclick="
-                      document.getElementById('id01').style.display = 'none'
-                    " class="close" title="Close Modal">&times;</span>
-
-                <img src="img_avatar2.png" alt="Avatar" class="avatar" />
-              </div>
-
-              <div class="container">
-                <label for="uname"><b>Username</b></label>
-
-                <input type="text" placeholder="Enter Username" name="uname" required />
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required />
-
-                <button type="submit">Login</button>
-                <label>
-                  <input type="checkbox" checked="checked" name="remember" />
-                  Remember me
-                </label>
-              </div>
-
-              <div class="container" style="background-color: #f1f1f1">
-                <button type="button" onclick="
-                      document.getElementById('id01').style.display = 'none'
-                    " class="cancelbtn">
-                  Cancel
-                </button>
-
-                <span class="psw">Forgot <a href="#">password?</a></span>
-              </div>
-            </form>
-          </div>
-
-          <!-- <a class="nav-items" href="Login.html">Login</a> -->
         </li>
       </ul>
     </nav>
   </header>
 
-  <main class="main-section">
-     <div class="container">
-    <div class="card">
-      <div class="title">
-        <h2>Contact Us</h2>
+  <div id="id01" class="modal">
+    <div class="modal-content animate">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
+        <img src="img_avatar2.png" alt="Avatar" class="avatar" />
       </div>
-      <div class="title-1">
-        We are available for questions, feedback, or collaboration
-        opportunities. Let us know how we can help!
-      </div>
-      <div class="title-2">
-        You can also contact us at contact@codewithmanas.com for any payment
-        or course access related queries.
-      </div>
-      <div class="my-image">
-        <img src="my_image.png" width="300px" alt="" />
-      </div>
-    </div>
 
-    <!-- Contact Us Form -->
-    <div class="card">
-      <form action="post">
-        <div>
-          <div class="single-form-section">
-            <label for="Name" class="form-element">Name</label><br>
-            <input class="form-element form-input" type="email" name="Name" placeholder="Your Name" />
-          </div>
+      <form action="/action_page.php" method="post" style="border:none; background:transparent; padding:0;">
+        <div class="modal-body">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required />
 
-          <div class="single-form-section">
-            <label for="Email" class="form-element">Email</label><br>
-            <input class="form-element form-input" type="email" name="Email" placeholder="Email" />
-          </div>
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required />
 
-          <div class="single-form-section">
-            <label for="Contact-no" class="form-element">Phone Number</label><br>
-            <input class="form-element form-input" type="number" name="Contact-no " placeholder="Your 10-Digit Number" />
-          </div>
-
-          <div class="single-form-section">
-            <label for="message" class="form-element">Message</label><br>
-            <textarea class="form-element form-input" name="message" id="" placeholder="Type your message here!"></textarea>
-          </div>
+          <button type="submit" class="modal-login-btn">Login</button>
+          <label style="margin-top: 15px; display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" checked="checked" name="remember" /> Remember me
+          </label>
+        </div>
       </form>
+
+      <div class="modal-footer">
+        <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
     </div>
+  </div>
+
+  <main class="main-section">
+    <div class="content-grid">
+      
+      <div class="info-container">
+        <div class="title">
+          <h2>Contact Us</h2>
+        </div>
+        <div class="title-1">
+          We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!
+        </div>
+        <div class="title-2">
+          You can also contact us at <strong>contact@codewithmanas.com</strong> for any payment or course access related queries.
+        </div>
+        <div class="my-image">
+          <img src="my_image.png" alt="Contact Graphic Representation" />
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form action="#" method="POST">
+          <div class="single-form-section">
+            <label for="Name" class="form-label">Name</label>
+            <input class="form-input" type="text" id="Name" name="Name" placeholder="Your Name" required />
+          </div>
+
+          <div class="single-form-section">
+            <label for="Email" class="form-label">Email</label>
+            <input class="form-input" type="email" id="Email" name="Email" placeholder="Email Address" required />
+          </div>
+
+          <div class="single-form-section">
+            <label for="Contact-no" class="form-label">Phone Number</label>
+            <input class="form-input" type="number" id="Contact-no" name="Contact-no" placeholder="Your 10-Digit Number" />
+          </div>
+
+          <div class="single-form-section">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-input" id="message" name="message" placeholder="Type your message here!"></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+
     </div>
   </main>
 </body>
