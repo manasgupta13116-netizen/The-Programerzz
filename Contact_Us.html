@@ -3,9 +3,6 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <title>Contact me</title>
 
   <style>
@@ -243,27 +240,24 @@
     }
 
     /* Main Section */
-
-    .main-section {
-      /* border: 2px solid rgb(58, 237, 70); */
-      /* display: grid;
-      grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
-      gap: 30px; */
-
-    }
-
-    .container-2 {
-      color: var(--text-color);
-      text-align: left;
-      width: 300px;
-      margin: 60px;
+    .main-section{
+      
     }
 
     .container{
       display: grid;
       grid-template-columns: repeat(auto-fit , minmax(300px , 1fr));
-      gap: 30px;
+      gap: 20px;
     }
+    
+    .card{
+      color: var(--text-color);
+      text-align: center;
+      width: 300px;
+      margin: 60px;
+      /* border: 2px solid red; */
+    }
+    
 
     .title {
       font-size: 1em;
@@ -294,14 +288,6 @@
     }
 
 
-    .form {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      /* border: 2px solid red; */
-    }
-
     form{
       border: 1px solid var(--seccolor);
       border-radius: 10px;
@@ -323,6 +309,10 @@
       background-color: var(--Card-bg-color);
       color: var(--text-color);
       border: none;
+      padding: 10px;
+      border-radius: 5px;
+      /* max-width: 50vw; */
+      
     }
   </style>
 </head>
@@ -396,8 +386,8 @@
   </header>
 
   <main class="main-section">
-    <div class="container">
-    <div class="container-2">
+     <div class="container">
+    <div class="card">
       <div class="title">
         <h2>Contact Us</h2>
       </div>
@@ -415,7 +405,7 @@
     </div>
 
     <!-- Contact Us Form -->
-    <div class="form">
+    <div class="card">
       <form action="post">
         <div>
           <div class="single-form-section">
